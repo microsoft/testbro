@@ -37,7 +37,7 @@ describe("Sample test", () => {
 });
 ```
 
-Under the hood, `index.html` will be loaded in the browser, a simple DOM with `<button>` will be pushed as the contents of the page's <body>, `Tab` key will be pressed and the test will check if the button has focus.
+Under the hood, `index.html` will be loaded in the browser, a simple DOM with `<button>` will be pushed as the contents of the page's `<body>`, `Tab` key will be pressed and the test will check if the button has focus.
 
 ## API
 
