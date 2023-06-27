@@ -1,18 +1,51 @@
-# Project
+# Testbro
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+_BEWARE: Work-in-progress._
 
-As the maintainer of this project, please make a few updates:
+## Unittest-like testing in the browser.
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+Typically, we might have unittests which allow to test atomic parts of the code in a mocked environment. And we might have more complex integration tests which allow to test complex real life scenarios in the real browser environment.
+
+**Testbro** allows to write unittests and run them in the real browser environment.
+
+## Example
+
+A test looks like:
+
+```TypeScript
+import * as React from "react";
+import { Testbro, bootstrapTestbroPage } from "testbro";
+
+describe("Sample test", () => {
+  beforeEach(async () => {
+    await bootstrapTestbroPage("index.html");
+  });
+
+  it("puts a button on the page and checks it is tabbable", async () => {
+    await new Testbro(
+      (
+        <div>
+          <button>Button1</button>
+        </div>
+      )
+    )
+      .pressTab()
+      .activeElement((el) => {
+        expect(el?.textContent).toEqual("Button1");
+      });
+  });
+});
+```
+
+Under the hood, `index.html` will be loaded in the browser, a simple DOM with `<button>` will be pushed as the contents of the page's <body>, `Tab` key will be pressed and the test will check if the button has focus.
+
+## API
+
+Here be dragons.
 
 ## Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
 
@@ -26,8 +59,8 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 ## Trademarks
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.
