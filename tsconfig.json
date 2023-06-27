@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "composite": true,
+        "incremental": true,
+        "noResolve": false,
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "skipLibCheck": true,
+        "strictNullChecks": true,
+        "strictPropertyInitialization": true,
+        "forceConsistentCasingInFileNames": true,
+        "lib": ["DOM", "ESNext"],
+        "esModuleInterop": true,
+        "target": "ESNext",
+        "jsx": "react",
+        "types": ["jest", "react"],
+        "outDir": "./dist",
+        "declarationDir": "./dist/dts",
+        "sourceMap": true
+    },
+    "include": ["**/*.ts", "**/*.tsx"],
+    "exclude": ["dist", "node_modules"]
+}

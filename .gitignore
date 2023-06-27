@@ -1,0 +1,24 @@
+# Logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Miscellaneous user files
+*.user
+.DS_STORE
+.idea/*
+.vs
+
+dist/
+dts/
+/.rts2*
+/.rollup.cache
+
+.npmrc
+
+.devcontainer
