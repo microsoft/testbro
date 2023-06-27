@@ -12,28 +12,28 @@ Typically, we might have unittests which allow to test atomic parts of the code 
 
 A test looks like:
 
-```TypeScript
+```tsx
 import * as React from "react";
 import { Testbro, bootstrapTestbroPage } from "testbro";
 
 describe("Sample test", () => {
-  beforeEach(async () => {
-    await bootstrapTestbroPage("index.html");
-  });
+    beforeEach(async () => {
+        await bootstrapTestbroPage("index.html");
+    });
 
-  it("puts a button on the page and checks it is tabbable", async () => {
-    await new Testbro(
-      (
-        <div>
-          <button>Button1</button>
-        </div>
-      )
-    )
-      .pressTab()
-      .activeElement((el) => {
-        expect(el?.textContent).toEqual("Button1");
-      });
-  });
+    it("puts a button on the page and checks it is tabbable", async () => {
+        await new Testbro(
+            (
+                <div>
+                    <button>Button1</button>
+                </div>
+            )
+        )
+            .pressTab()
+            .activeElement((el) => {
+                expect(el?.textContent).toEqual("Button1");
+            });
+    });
 });
 ```
 
