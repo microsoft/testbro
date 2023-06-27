@@ -16,7 +16,6 @@
         "dist",
         "jest-puppeteer.config.cjs",
         "tsconfig.json"
-
     ],
     "repository": {
         "type": "git",

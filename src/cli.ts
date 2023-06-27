@@ -13,7 +13,6 @@ import { TestbroConfig } from "./testbro";
 
 const moduleName = "testbro";
 
-// const projectRootDir = join(process.cwd());
 const testbroRootDir = fileURLToPath(new URL("..", import.meta.url));
 const jestPresetPath = join(testbroRootDir, "dist", "jest-preset");
 const JEST_PUPPETEER_CONFIG = join(testbroRootDir, "jest-puppeteer.config.cjs");
@@ -76,4 +75,4 @@ await jest.runCLI(jestConfig, [process.cwd()]).then(
     }
 );
 
-devServer?.close();
+await devServer?.close();
