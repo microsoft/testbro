@@ -1,3 +1,8 @@
+/*!
+ * Copyright (c) Microsoft Corporation. All rights reserved.
+ * Licensed under the MIT License.
+ */
+
 import fs from "fs";
 import sourceMaps from "rollup-plugin-sourcemaps";
 import typescript from "rollup-plugin-typescript2";
@@ -5,7 +10,6 @@ import dts from "rollup-plugin-dts";
 
 import pkg from "./package.json" assert { type: "json" };
 
-const extensions = [".ts"];
 const externalDeps = [
     "cosmiconfig",
     "jest-puppeteer",

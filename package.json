@@ -1,6 +1,6 @@
 {
     "name": "testbro",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Unittest-like testing in the browser",
     "author": "Marat Abdullin <marata@microsoft.com>",
     "license": "MIT",
@@ -13,7 +13,10 @@
         "testbro": "./dist/cli.js"
     },
     "files": [
-        "dist"
+        "dist",
+        "jest-puppeteer.config.cjs",
+        "tsconfig.json"
+
     ],
     "repository": {
         "type": "git",
